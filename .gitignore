@@ -1,0 +1,35 @@
+# Test-dokumenter og output (personlige/fortrolige filer)
+File Exports/
+*.html
+*.docx
+*.pdf
+
+# Workshop præsentation (separat projekt)
+Workshop præsentation/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Claude Code
+.claude/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
