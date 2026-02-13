@@ -22,7 +22,7 @@ En Word-til-HTML konverter der:
 
 ---
 
-## Status: CHECKPOINT 2025-02-06 (v26)
+## Status: CHECKPOINT 2026-02-13 (v27)
 
 ### Hvad er færdigt
 - [x] Visuel identitet guide opdateret (`backstage-vi-guide.md`)
@@ -89,15 +89,24 @@ En Word-til-HTML konverter der:
 - [x] **rgba() farver (v26)** - Erstattet `opacity` med `rgba()` for cover-tekst, løser pixelering i PDF
 - [x] **text-stroke: 0 (v26)** - Tilføjet til alle cover-elementer for skarp PDF-rendering
 - [x] **fax-rapport stresstest (v26)** - Testet PDF print med korrekt logo og skarp tekst
+- [x] **HTML Exports output-mappe (v27)** - HTML-filer gemmes i `HTML Exports/` med relative font-stier (`../Fonts/`)
+- [x] **Font-stier fix (v27)** - Rettet `fonts/` → `../Fonts/` og logo `../Backstage Logo/` for korrekt visning fra undermappe
+- [x] **GitHub repo (v27)** - Offentligt repo: `haettemaagen/Backstage-Report-Engine`
+- [x] **Mappestruktur oprydning (v27)** - Test-filer i `File Exports/`, output i `HTML Exports/`, kun kode i rod
+- [x] **Engelsk stresstest (v27)** - `fax-report-english.docx` oprettet og konverteret med engelsk indhold
+- [x] **Nina PhD thesis stresstest (v27)** - 519 paragraffer, 76 billeder, 12 tabeller - konverteret succesfuldt
+- [x] **README.md opdateret (v27)** - Mappestruktur, klon-URL, output-instruktioner, Claude Code workflow
 
 ### Kendte issues (til senere)
 - [x] **Indholdsfortegnelse** - Implementeret! Auto-genereret fra dokumentets overskrifter (ikke fra Word TOC)
 - [x] **Tal-læsbarhed i overskrifter** - Løst med `format_heading_numbers()` - 1x tyndt mellemrum FØR punktum (ens for alle tal)
+- [ ] **Callout max-længde** - Overvej max ~500 tegn grænse (forhindrer alt for lange highlight boxes)
+- [ ] **Billede-ekstraktion i store docs** - Nina thesis: kun 14/76 billeder ekstraheret (forbedring nødvendig)
 
 ### Næste skridt
 - [ ] Test web-appen med `streamlit run app.py`
 - [ ] Deploy til intern server
-- [ ] Test med flere forskellige Word-dokumenter
+- [ ] Implementér callout max-længde regel (~500 tegn)
 
 ---
 
@@ -762,6 +771,53 @@ html = convert_to_html(
 
 ---
 
+## Samtale-checkpoint: 13. februar 2026 (session 14) - v27
+
+### Hvad vi lavede i denne session
+1. **PDF print fix (v26)** - Færdiggjort fra forrige session
+   - Inline hvid SVG logo (alle paths `fill="white"`) i stedet for CSS filter
+   - `rgba()` farver i stedet for `opacity` (løser pixelering i PDF)
+   - `text-stroke: 0` + `print-color-adjust: exact` på alle cover-elementer
+
+2. **Engelsk stresstest** - Oprettet `fax-report-english.docx` fra bunden med fuld oversættelse
+   - Konverteret til Backstage HTML med 7 tabeller, 4 callouts
+   - Verifikation: Converteren håndterer engelsk indhold fint
+
+3. **Nina PhD thesis stresstest** - Stor akademisk afhandling (4.3 MB)
+   - 519 paragraffer, 76 billeder, 12 tabeller
+   - Resultat: 14/76 billeder ekstraheret (billedekstraktion skal forbedres)
+   - Tekst og tabeller konverteret korrekt (19,702 ord bevaret)
+
+4. **Mappestruktur oprydning**
+   - Oprettet `File Exports/` til test-dokumenter (docx, pdf)
+   - Oprettet `HTML Exports/` til genererede HTML-filer
+   - Font-stier ændret: `fonts/` → `../Fonts/` (virker fra undermappe)
+   - Logo-sti ændret: `../Backstage Logo/`
+
+5. **GitHub repo oprettet**
+   - Public repo: https://github.com/haettemaagen/Backstage-Report-Engine
+   - `.gitignore` ekskluderer: `File Exports/`, `HTML Exports/`, `*.docx`, `*.html`, `*.pdf`
+   - Kun kode, fonts, logo og dokumentation deles
+   - `test_converter.py` slettet (ikke nødvendig i repo)
+
+6. **README.md opdateret** - Mappestruktur, klon-URL, Claude Code workflow
+
+### Filer ændret
+- `html_converter.py` - Inline SVG, rgba farver, font-stier, logo-sti
+- `CLAUDE.md` - v27 checkpoint, output-mappe regler, beslutninger
+- `README.md` - Ny version med mappestruktur og GitHub URL
+- `.gitignore` - Tilføjet `File Exports/`, `HTML Exports/`
+
+### Beslutninger taget
+| Beslutning | Valg |
+|------------|------|
+| Output-mappe | `HTML Exports/` (fonts virker via `../Fonts/`) |
+| GitHub visibility | Public repo |
+| Font-stier | Relative fra undermappe (`../Fonts/`, `../Backstage Logo/`) |
+| Callout max-længde | ~500 tegn anbefalet (ikke implementeret endnu) |
+
+---
+
 ## Samtale-checkpoint: 6. februar 2025 (session 13)
 
 ### Hvad vi lavede i denne session
@@ -1248,7 +1304,7 @@ a, a.link {
 
 ---
 
-*Checkpoint gemt: 6. februar 2025 (v26)*
+*Checkpoint gemt: 13. februar 2026 (v27)*
 *Denne fil læses automatisk af Claude Code ved hver session.*
 
 ---
