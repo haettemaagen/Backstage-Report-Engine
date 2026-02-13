@@ -266,8 +266,8 @@ html_output = convert_to_html(
     cover_date="Februar 2026"                 # Valgfrit (kun hvis fundet)
 )
 
-# Gem HTML-filen
-with open("output_backstage.html", "w", encoding="utf-8") as f:
+# VIGTIGT: Gem ALTID i HTML Exports/ mappen (fonts virker kun derfra)
+with open("HTML Exports/output_backstage.html", "w", encoding="utf-8") as f:
     f.write(html_output)
 ```
 
@@ -334,6 +334,7 @@ datasæt og bør valideres med yderligere tests før implementering i produktion
 | Sidetal font | Arial 9pt (system font for konsistent PDF) |
 | Sidetal styling | `text-stroke: 0` for at undgå pixelering |
 | PDF print forside | `rgba()` farver (ikke `opacity`), inline SVG, `text-stroke: 0` |
+| **Output-mappe** | **`HTML Exports/`** — HTML-filer SKAL gemmes her (font-stier er relative: `../Fonts/`) |
 | Tal-kerning i overskrifter | Tyndt mellemrum FØR punktum (3x ved "1", 1x ved andre) - KUN H1, H2, H3 (IKKE TOC) |
 | Indholdsfortegnelse | **Auto-genereret** fra H1/H2/H3, egen side (side 2), INGEN caption/label, border-bottom på hver entry, auto-sidetal via JS |
 | Caption-undtagelser | Bilag, Ordliste, Appendix, Glossar, Litteratur, Referencer får INGEN label |
@@ -1290,8 +1291,8 @@ html_output = convert_to_html(
     cover_date="Februar 2026"  # Valgfrit - kun hvis dato findes i dokumentet
 )
 
-# 6. Gem og QC
-with open("output.html", "w", encoding="utf-8") as f:
+# 6. Gem i HTML Exports/ mappen (VIGTIGT: fonts virker kun derfra)
+with open("HTML Exports/output.html", "w", encoding="utf-8") as f:
     f.write(html_output)
 
 report = quality_check(doc, html_output)

@@ -1,5 +1,6 @@
 # Test-dokumenter og output (personlige/fortrolige filer)
 File Exports/
+HTML Exports/
 *.html
 *.docx
 *.pdf

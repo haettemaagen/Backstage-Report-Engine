@@ -47,7 +47,7 @@ NO_LABEL_HEADINGS = [
 ]
 
 # Logo - bruger PNG fil for bedre print-kvalitet (17px for skarp PDF)
-LOGO_HTML = '''<img src="Backstage Logo/Backstage Logo - Dark On White.png" alt="Backstage" style="height: 17px; width: auto; display: block;">'''
+LOGO_HTML = '''<img src="../Backstage Logo/Backstage Logo - Dark On White.png" alt="Backstage" style="height: 17px; width: auto; display: block;">'''
 
 # Global variabel til semantisk identificerede call-outs
 # Sættes af convert_to_html() når callout_paragraphs parameter bruges
@@ -1061,21 +1061,21 @@ def get_html_header(title: str) -> str:
     /* FH Lecturis - Backstage custom font */
     @font-face {{
       font-family: 'FH Lecturis';
-      src: url('fonts/FHLecturis_BSCustom_Regular.otf') format('opentype');
+      src: url('../Fonts/FHLecturis_BSCustom_Regular.otf') format('opentype');
       font-weight: 400;
       font-style: normal;
     }}
 
     @font-face {{
       font-family: 'FH Lecturis';
-      src: url('fonts/FHLecturis_BSCustom_Bold.otf') format('opentype');
+      src: url('../Fonts/FHLecturis_BSCustom_Bold.otf') format('opentype');
       font-weight: 700;
       font-style: normal;
     }}
 
     @font-face {{
       font-family: 'FH Lecturis';
-      src: url('fonts/FHLecturis_BSCustom_Light.otf') format('opentype');
+      src: url('../Fonts/FHLecturis_BSCustom_Light.otf') format('opentype');
       font-weight: 300;
       font-style: normal;
     }}
@@ -1083,28 +1083,28 @@ def get_html_header(title: str) -> str:
     /* Helvetica Neue */
     @font-face {{
       font-family: 'Helvetica Neue';
-      src: url('fonts/HelveticaNeue/HelveticaNeue-Light-08.ttf') format('truetype');
+      src: url('../Fonts/HelveticaNeue/HelveticaNeue-Light-08.ttf') format('truetype');
       font-weight: 300;
       font-style: normal;
     }}
 
     @font-face {{
       font-family: 'Helvetica Neue';
-      src: url('fonts/HelveticaNeue/HelveticaNeue-Medium-11.ttf') format('truetype');
+      src: url('../Fonts/HelveticaNeue/HelveticaNeue-Medium-11.ttf') format('truetype');
       font-weight: 500;
       font-style: normal;
     }}
 
     @font-face {{
       font-family: 'Helvetica Neue';
-      src: url('fonts/HelveticaNeue/HelveticaNeue-01.ttf') format('truetype');
+      src: url('../Fonts/HelveticaNeue/HelveticaNeue-01.ttf') format('truetype');
       font-weight: 400;
       font-style: normal;
     }}
 
     @font-face {{
       font-family: 'Helvetica Neue';
-      src: url('fonts/HelveticaNeue/HelveticaNeue-Bold-02.ttf') format('truetype');
+      src: url('../Fonts/HelveticaNeue/HelveticaNeue-Bold-02.ttf') format('truetype');
       font-weight: 700;
       font-style: normal;
     }}
