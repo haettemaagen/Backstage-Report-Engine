@@ -398,7 +398,6 @@ fonts/
 
 ## Noter til Claude
 
-- Svar altid på dansk
 - `backstage-vi-guide.md` er master-dokumentet for visuel identitet
 - Logo skal være i sidefoden, ikke i headeren
 - Brug lokale font-referencer (ikke base64) i HTML previews
